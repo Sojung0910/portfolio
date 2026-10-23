@@ -38,7 +38,15 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000 0%,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
 .cover .wrap{position:relative;width:100%}
 .cover-top{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:#8fa0c2;letter-spacing:.08em}
-.cover-top b{color:#fff;letter-spacing:0;font-size:15px}
+.cover-top b{color:#fff;letter-spacing:0;font-size:15px;flex:none}
+.cover-nav{display:flex;gap:6px;letter-spacing:0}
+.cover-nav a{font-size:14px;font-weight:600;color:#c9d4ec;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;white-space:nowrap;transition:.2s}
+.cover-nav a:hover{color:var(--navy);background:#fff;border-color:#fff}
+@media (max-width:760px){
+  .cover-top{flex-direction:column;align-items:flex-start;gap:14px}
+  .cover-nav{width:100%;flex-wrap:wrap}
+  .cover-nav a{font-size:13px;padding:7px 12px}
+}
 .cover-body{flex:1;display:flex;align-items:center;padding-top:64px;padding-bottom:64px}
 .cover-label{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.1em;color:#9db6ff}
 .cover-label::before{content:"";width:28px;height:2px;background:#9db6ff}
@@ -172,7 +180,7 @@ section.alt{background:var(--bg-2)}
 .ba .row.after{color:var(--navy);font-weight:700}
 .ba .row span:last-child{text-align:right}
 .bep{position:relative;margin-top:8px}
-.bep .seats{display:grid;grid-template-columns:repeat(32,1fr);gap:3px}
+.bep .seats{display:grid;grid-template-columns:repeat(30,1fr);gap:3px}
 .bep .seats i{aspect-ratio:1;border-radius:2px;background:var(--bg-2)}
 .bep .seats i.s{background:var(--blue-line)}
 .bep .seats i.p{background:var(--blue)}
@@ -249,7 +257,7 @@ section.alt{background:var(--bg-2)}
   .result{flex-direction:column;align-items:flex-start;gap:6px}
   .pipe{grid-template-columns:1fr}
   .bridge{flex-direction:column;align-items:flex-start;gap:6px}.bridge::before{display:none}
-  .bep .seats{grid-template-columns:repeat(20,1fr)}
+  .bep .seats{grid-template-columns:repeat(24,1fr)}
   .cover-proof{grid-template-columns:repeat(3,1fr);row-gap:8px}
   .cover-proof div:first-child{grid-column:1/-1}
   .cover-body{padding-top:48px;padding-bottom:48px}
@@ -264,7 +272,13 @@ section.alt{background:var(--bg-2)}
 <section class="cover" id="cover" data-sec="cover">
   <div class="wrap cover-top">
     <b>이소정</b>
-    <span>ACCOUNTING · FINANCE PORTFOLIO</span>
+    <div class="cover-nav" aria-label="목차 바로가기">
+      <a href="#resume" data-track="covernav_resume">이력</a>
+      <a href="#p1" data-track="covernav_p1">프로젝트 1</a>
+      <a href="#p2" data-track="covernav_p2">프로젝트 2</a>
+      <a href="#p3" data-track="covernav_p3">프로젝트 3</a>
+      <a href="#mini" data-track="covernav_mini">소규모 프로젝트</a>
+    </div>
   </div>
   <div class="wrap cover-body">
     <div>
@@ -315,7 +329,7 @@ section.alt{background:var(--bg-2)}
     <div class="stats rv">
       <div class="stat"><b class="num">4.21<small>/4.5</small></b><span>학점 (4.5 만점 환산)</span></div>
       <div class="stat"><b class="num">2<small>개</small></b><span>재경관리사 · 투자자산운용사</span></div>
-      <div class="stat"><b class="num">7→38<small>%</small></b><span>공연 마진률 개선</span></div>
+      <div class="stat"><b class="num">7→40<small>%</small></b><span>공연 마진률 개선</span></div>
       <div class="stat"><b class="num">1<small>위</small></b><span>YCAFE 사업안 청중평가</span></div>
     </div>
 
@@ -360,7 +374,7 @@ section.alt{background:var(--bg-2)}
         <ul class="rows">
           <li><span class="d">학회</span><div><b>국제정치 RT</b><small>국제정치 이슈 토론 및 발제</small></div></li>
           <li><span class="d">학회</span><div><b>Ewha Newsweek Club</b><small>영자신문 분석 및 이슈 발표</small></div></li>
-          <li><span class="d">2026</span><div><b>정책 토론대회</b><small>대미 디지털 협력·AI 경쟁력을 위한 AI 규제 완화 의제 (찬성 측)</small></div></li>
+          <li><span class="d">2026</span><div><b>정책 토론대회 <span class="hl">16강 진출</span></b><small>대미 디지털 협력·AI 경쟁력을 위한 AI 규제 완화 의제 (찬성 측)</small></div></li>
         </ul>
       </div>
 
@@ -461,21 +475,21 @@ section.alt{background:var(--bg-2)}
     <div class="proj-top">
       <div class="rv">
         <span class="tag">PROJECT 02 <em>· CONTROL</em></span>
-        <h2>공연 마진률<br><em class="num">7% → 38%</em></h2>
+        <h2>공연 마진률<br><em class="num">7% → 40%</em></h2>
         <p class="one">고정비와 변동비를 나누자, 줄일 곳과 지킬 곳이 보였습니다.</p>
       </div>
       <dl class="meta rv">
         <div><dt>소속</dt><dd>라임라이트 연극동아리</dd></div>
         <div><dt>기간</dt><dd>2024 – 현재</dd></div>
-        <div><dt>규모</dt><dd class="num">80석 × 8회 · 티켓 15,000원</dd></div>
+        <div><dt>규모</dt><dd class="num">30석 × 8회 (총 240석) · 티켓 15,000원</dd></div>
         <div><dt>역할</dt><dd>총무 · 제작비·회비 관리</dd></div>
       </dl>
     </div>
 
     <div class="steps">
-      <div class="step rv"><div class="k">PROBLEM</div><h4>팔아도 남지 않는 구조</h4><p>제작비 약 250만 원에 관객 약 180명. 마진률이 7% 수준에 그쳐, 공연이 끝나도 다음 공연을 위한 여유 자금이 거의 남지 않았습니다.</p></div>
+      <div class="step rv"><div class="k">PROBLEM</div><h4>팔아도 남지 않는 구조</h4><p>제작비 약 250만 원, 관객은 약 180명. 마진률이 7% 수준에 그쳐, 공연이 끝나도 다음 공연을 위한 여유 자금이 거의 남지 않았습니다.</p></div>
       <div class="step key rv"><div class="k">APPROACH</div><h4>숫자로 공유하고 조율</h4><ul><li>지출을 엑셀로 정리해 <b>고정비/변동비 분리</b></li><li>손익분기점 <b class="num">약 167석</b>을 팀 전체에 공유</li><li>파트장과 항목별 우선순위 조율</li></ul></div>
-      <div class="step rv"><div class="k">ACTION</div><h4>비용은 줄이고 관객은 늘리고</h4><ul><li>소품·의상 재사용으로 제작비 절감</li><li>사전 예매 도입으로 관객 수 사전 확보</li><li>팀원별 회비·필요 경비 직접 취합</li></ul></div>
+      <div class="step rv"><div class="k">ACTION</div><h4>비용은 줄이고 관객은 늘리고</h4><ul><li>소품·의상 재사용으로 제작비 절감</li><li>사전 예매 도입으로 관객 수 사전 확보</li><li>회차별 예약률을 확인해 <b>저조한 회차를 집중 홍보</b>, 관객 <b class="num">240명</b>으로 확대</li><li>팀원별 회비·필요 경비 직접 취합</li></ul></div>
     </div>
 
     <div class="panel rv">
@@ -485,19 +499,19 @@ section.alt{background:var(--bg-2)}
           <li><div class="lab"><b>제작비</b><span class="delta">−14%</span></div>
             <div class="row"><span>Before</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">250만 원</span></div>
             <div class="row after"><span>After</span><div class="t"><div class="f" data-w="86"></div></div><span class="num">215만 원</span></div></li>
-          <li><div class="lab"><b>관객 수</b><span class="delta">+28%</span></div>
-            <div class="row"><span>Before</span><div class="t"><div class="f" data-w="78"></div></div><span class="num">180명</span></div>
-            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">230명</span></div></li>
-          <li><div class="lab"><b>마진률</b><span class="delta">+31%p</span></div>
+          <li><div class="lab"><b>관객 수</b><span class="delta">+33%</span></div>
+            <div class="row"><span>Before</span><div class="t"><div class="f" data-w="75"></div></div><span class="num">180명</span></div>
+            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">240명</span></div></li>
+          <li><div class="lab"><b>마진률</b><span class="delta">+33%p</span></div>
             <div class="row"><span>Before</span><div class="t"><div class="f" data-w="18"></div></div><span class="num">7%</span></div>
-            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">38%</span></div></li>
+            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">40%</span></div></li>
         </ul>
         <div>
-          <div class="panel-head" style="margin-bottom:12px"><h4 style="font-size:14px">손익분기와 관객 (총 640석)</h4></div>
-          <div class="bep"><div class="seats" id="seats" role="img" aria-label="총 640석 중 손익분기 167석, 최종 관객 230명"></div></div>
+          <div class="panel-head" style="margin-bottom:12px"><h4 style="font-size:14px">손익분기와 관객 (총 240석)</h4></div>
+          <div class="bep"><div class="seats" id="seats" role="img" aria-label="총 240석 중 손익분기 167석, 최종 관객 240명"></div></div>
           <div class="bep-note">
             <span><i style="background:var(--blue-line)"></i>손익분기 167석</span>
-            <span><i style="background:var(--blue)"></i>손익분기 초과 이익 구간 (~230명)</span>
+            <span><i style="background:var(--blue)"></i>손익분기 초과 이익 구간 (168~240석)</span>
           </div>
         </div>
       </div>
@@ -505,7 +519,7 @@ section.alt{background:var(--bg-2)}
 
     <div class="result rv">
       <div class="big">동아리 기준으로</div>
-      <p>목표였던 마진률 30%를 넘어 <b>약 38%</b>를 달성했고, 이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
+      <p>목표였던 마진률 30%를 넘어 <b>약 40%</b>를 달성했고, 이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
     </div>
 
     <div class="bridge rv">관리의 다음 단계는, 결과가 나오기 전에 데이터로 판단하는 것입니다. <a href="#p3">프로젝트 3 · 데이터 분석 →</a></div>
@@ -617,9 +631,9 @@ const gbMax = GB[0][1];
 document.getElementById('gbBars').innerHTML = GB.map((r,i)=>
   `<li class="${i<2?'top':''}"><span class="n">${r[0]}</span><div class="t"><div class="f" data-w="${r[1]/gbMax*100}"></div></div><span class="v num">$${r[1].toLocaleString()}</span></li>`).join('');
 
-/* ===== 프로젝트2 좌석 (640석, 1칸=1석은 과해서 1칸=5석) ===== */
+/* ===== 프로젝트2 좌석 (30석 × 8회 = 240석, 1칸 = 1석) ===== */
 (function(){
-  const total=128, bep=Math.round(167/5), aud=Math.round(230/5);
+  const total=240, bep=167, aud=240;
   let h=''; for(let i=0;i<total;i++) h+=`<i class="${i<bep?'s':i<aud?'p':''}"></i>`;
   document.getElementById('seats').innerHTML=h;
 })();
