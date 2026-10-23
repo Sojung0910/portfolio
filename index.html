@@ -51,7 +51,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .cover-label{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.1em;color:#9db6ff}
 .cover-label::before{content:"";width:28px;height:2px;background:#9db6ff}
 .cover h1{font-size:clamp(38px,6.6vw,82px);line-height:1.14;letter-spacing:-.045em;font-weight:800;margin:28px 0 0}
-.cover h1 .then{display:block;color:#8fa0c2;font-weight:700;font-size:.62em;letter-spacing:-.035em;margin-top:22px}
+.cover h1 .line1{display:block;white-space:nowrap;font-size:min(78px,calc((100vw - 48px) / 13.5))}
+@media (max-width:640px){.cover h1 .line1{font-size:calc((100vw - 32px) / 13.5)}.cover h1 .then{font-size:18px;margin-top:14px}}
+.cover h1 .then{display:block;color:#8fa0c2;font-weight:700;font-size:clamp(22px,4vw,50px);letter-spacing:-.035em;margin-top:22px}
 .cover h1 .then em{color:#fff}
 .cover h1 .dash{color:#9db6ff;margin-right:.25em}
 .cover-proof{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;margin-top:64px;border-top:1px solid rgba(255,255,255,.2)}
@@ -80,7 +82,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 /* hero */
 .hero{padding:120px 0 96px;border-bottom:1px solid var(--line)}
 .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.22;letter-spacing:-.035em;font-weight:800;color:var(--navy);margin:20px 0 24px}
-.hero p.lead{font-size:clamp(16px,1.8vw,19px);color:var(--sub);max-width:640px}
+.hero p.lead{font-size:clamp(16px,1.8vw,19px);color:var(--sub)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:2px solid var(--navy)}
 .stat{padding:22px 20px 0 0}
 .stat b{display:block;font-size:clamp(26px,3.4vw,38px);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.2}
@@ -99,7 +101,8 @@ section.block{padding:112px 0;border-bottom:1px solid var(--line)}
 section.alt{background:var(--bg-2)}
 .sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:56px}
 .sec-head h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.03em;line-height:1.3;color:var(--navy);font-weight:800}
-.sec-head p{color:var(--sub);margin-top:12px;max-width:620px}
+.sec-head p{color:var(--sub);margin-top:12px}
+@media (min-width:900px){.oneline{white-space:nowrap}}
 
 /* resume */
 .resume{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -284,7 +287,7 @@ section.alt{background:var(--bg-2)}
   <div class="wrap cover-body">
     <div>
       <div class="cover-label">PROJECT 01 · 외교부 YCAFE GreenBridge</div>
-      <h1>아이디어에 <em style="color:#9db6ff">원가</em>를 매겼습니다.
+      <h1><span class="line1">아이디어에 <em style="color:#9db6ff">원가</em>를 매겼습니다.</span>
         <span class="then"><span class="dash">—</span>이제, <em>회사의 숫자</em>에 근거를 더하겠습니다.</span>
       </h1>
       <div class="cover-proof">
@@ -325,7 +328,7 @@ section.alt{background:var(--bg-2)}
   <div class="wrap">
     <div class="eyebrow rv">Accounting · Finance · Data Analysis</div>
     <h1 class="rv">숫자 뒤 맥락을 이해하고,<br><em>재무적 역량을 직접</em> 펼쳐본 사람</h1>
-    <p class="lead rv">정치외교학으로 국제 정세와 거시경제의 흐름을 읽고, 경영학으로 그 흐름을 재무적 수치로 풀어냅니다. 예산을 세우고, 비용을 관리하고, 데이터로 판단해 온 과정을 소개합니다.</p>
+    <p class="lead rv">정치외교학으로 국제 정세와 거시경제의 흐름을 읽고, 경영학으로 그 흐름을 재무적 수치로 풀어냅니다.<br>예산을 세우고, 비용을 관리하고, 데이터로 판단해 온 과정을 소개합니다.</p>
 
     <div class="stats rv">
       <div class="stat"><b class="num">4.21<small>/4.5</small></b><span>학점 (4.5 만점 환산)</span></div>
@@ -349,7 +352,7 @@ section.alt{background:var(--bg-2)}
       <div class="eyebrow">00 · Profile</div>
       <div>
         <h2>흐름을 읽는 눈에<br>숫자를 다루는 손을 더했습니다</h2>
-        <p>전공·자격으로 이론을 다지고, 정산·예산·회계보고 실무를 반복하며 재무 역량을 쌓아 왔습니다.</p>
+        <p class="oneline">전공·자격으로 이론을 다지고, 정산·예산·회계보고 실무를 반복하며 재무 역량을 쌓아 왔습니다.</p>
       </div>
     </div>
 
@@ -396,8 +399,9 @@ section.alt{background:var(--bg-2)}
           <li><span class="d">2023</span><div><b>외교부 제2대 청년사절 · 팀장</b><small>안보리 비상임이사국 진출 홍보, 팀 <span class="hl">활동 경비·증빙 취합 및 정산 관리</span></small></div></li>
           <li><span class="d">2024.10–11</span><div><b>외교부 YCAFE</b><small>아세안 학생들과 한-아세안 사업 기획, <span class="hl">사업 예산안 편성</span> 및 최종 발표</small></div></li>
           <li><span class="d">2024 –</span><div><b>라임라이트 연극동아리 · 총무</b><small>공연 제작비·회비 관리, <span class="hl">손익분기 기반 예산 운영</span></small></div></li>
+          <li><span class="d">학내 언론</span><div><b>이화투데이리포터</b><small>기존 게시글의 댓글·조회 데이터를 분석해 콘텐츠 기획에 반영, <span class="hl">한 학기 최다 조회수 게시글</span> 기록</small></div></li>
         </ul>
-        <p class="etc">그 외 · 이화투데이리포터 · 조선일보 ALC 서포터즈 · KrIGF 참가</p>
+        <p class="etc">그 외 · 조선일보 ALC 서포터즈 · KrIGF 참가</p>
       </div>
 
       <div class="card wide rv">
@@ -432,7 +436,7 @@ section.alt{background:var(--bg-2)}
     </div>
 
     <div class="steps">
-      <div class="step rv"><div class="k">SITUATION</div><h4>3주, 여러 나라의 이해관계</h4><p>한-아세안 청년이 디지털 기술로 환경 문제를 해결하도록 돕는 사업을, 각국의 이해관계와 협력 구조를 고려해 3주 안에 완성해야 했습니다.</p></div>
+      <div class="step rv"><div class="k">SITUATION</div><h4>3주, 여러 나라의 이해관계</h4><p>한-아세안 청년이 디지털 기술로 환경 문제를 해결하도록 돕는 사업을 각국의 이해관계와 협력 구조를 고려해 3주 안에 완성해야 했습니다.</p></div>
       <div class="step key rv"><div class="k">APPROACH</div><h4>원가에서 출발한 예산</h4><ul><li>해외 기업의 Twin Transition 사례로 수익성 비교</li><li>사업을 <b>교육·운영·홍보</b>로 나눠 사전원가 산출</li><li>목표원가를 역산해 항목별 예산 편성</li></ul></div>
       <div class="step rv"><div class="k">DESIGN</div><h4>재원까지 설계</h4><p>단일 재원 의존을 피하기 위해 한-아세안 협력기금, 국제개발은행, 정부·산업계로 재원 조달 구조를 분산했습니다.</p></div>
     </div>
@@ -463,7 +467,7 @@ section.alt{background:var(--bg-2)}
 
     <div class="result rv">
       <div class="big">청중평가 1위</div>
-      <p>교육 워크숍 · SNS 캠페인 · Green Innovation Competition · 멘토링 · 후속 지원까지 <b>프로그램마다 비용 근거를 갖춘 사업안</b>으로 평가받았습니다.</p>
+      <p>교육 워크숍 · SNS 캠페인 · Green Innovation Competition · 멘토링 · 후속 지원까지<br><b>프로그램마다 비용 근거를 갖춘 사업안</b>으로 평가받았습니다.</p>
     </div>
 
     <div class="bridge rv">세운 예산은 집행 과정에서 검증됩니다. <a href="#p2">프로젝트 2 · 비용 관리 →</a></div>
@@ -520,7 +524,7 @@ section.alt{background:var(--bg-2)}
 
     <div class="result rv">
       <div class="big">동아리 기준으로</div>
-      <p>목표였던 마진률 30%를 넘어 <b>약 40%</b>를 달성했고, 이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
+      <p>목표였던 마진률 30%를 넘어 <b>약 40%</b>를 달성했고,<br>이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
     </div>
 
     <div class="bridge rv">관리의 다음 단계는, 결과가 나오기 전에 데이터로 판단하는 것입니다. <a href="#p3">프로젝트 3 · 데이터 분석 →</a></div>
@@ -558,7 +562,7 @@ section.alt{background:var(--bg-2)}
 
     <div class="result rv">
       <div class="big">학기 최다 조회</div>
-      <p>분석 결과를 반영한 게시글이 한 학기 최다 조회수를 기록했습니다. 재무에서도 <b>숫자로 원인을 찾고, 개선으로 연결하는 방식</b>은 같다고 생각합니다.</p>
+      <p>분석 결과를 반영한 게시글이 한 학기 최다 조회수를 기록했습니다.<br>재무에서도 <b>숫자로 원인을 찾고, 개선으로 연결하는 방식</b>은 같다고 생각합니다.</p>
     </div>
 
     <div class="bridge rv">이 세 가지 방식은 작은 프로젝트에서도 반복되었습니다. <a href="#mini">소규모 프로젝트 →</a></div>
