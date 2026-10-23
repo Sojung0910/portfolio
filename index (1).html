@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이소정 | 회계·재무 포트폴리오</title>
+<meta name="description" content="숫자 뒤 맥락을 이해하고, 재무적 역량을 직접 펼쳐본 사람 — 이소정 회계·재무 포트폴리오">
+<meta property="og:title" content="이소정 | 회계·재무 포트폴리오">
+<meta property="og:description" content="예산을 세우고, 비용을 관리하고, 데이터로 판단합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --navy:#13213c; --navy-2:#1d3157; --blue:#2155d6; --blue-soft:#e9effc; --blue-line:#c9d6f5;
+  --ink:#141a24; --sub:#5b6474; --line:#e6e9ef; --bg:#ffffff; --bg-2:#f6f8fb;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+.num{font-variant-numeric:tabular-nums}
+em{font-style:normal;color:var(--blue)}
+
+/* nav */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:60}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.brand span{color:var(--sub);font-weight:500;font-size:13px;margin-left:8px}
+.menu{display:flex;gap:4px}
+.menu a{font-size:14px;color:var(--sub);padding:6px 12px;border-radius:999px;transition:.2s}
+.menu a:hover,.menu a.on{color:var(--navy);background:var(--blue-soft);font-weight:600}
+
+/* cover */
+.cover{min-height:100vh;min-height:100svh;background:var(--navy);color:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000 0%,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
+.cover .wrap{position:relative;width:100%}
+.cover-top{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:#8fa0c2;letter-spacing:.08em}
+.cover-top b{color:#fff;letter-spacing:0;font-size:15px;flex:none}
+.cover-nav{display:flex;gap:6px;letter-spacing:0}
+.cover-nav a{font-size:14px;font-weight:600;color:#c9d4ec;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;white-space:nowrap;transition:.2s}
+.cover-nav a:hover{color:var(--navy);background:#fff;border-color:#fff}
+@media (max-width:760px){
+  .cover-top{flex-direction:column;align-items:flex-start;gap:14px}
+  .cover-nav{width:100%;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}
+  .cover-nav::-webkit-scrollbar{display:none}
+  .cover-nav a{font-size:13px;padding:7px 12px}
+}
+.cover-body{flex:1;display:flex;align-items:center;padding-top:64px;padding-bottom:64px}
+.cover-label{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.1em;color:#9db6ff}
+.cover-label::before{content:"";width:28px;height:2px;background:#9db6ff}
+.cover h1{font-size:clamp(38px,6.6vw,82px);line-height:1.14;letter-spacing:-.045em;font-weight:800;margin:28px 0 0}
+.cover h1 .then{display:block;color:#8fa0c2;font-weight:700;font-size:.62em;letter-spacing:-.035em;margin-top:22px}
+.cover h1 .then em{color:#fff}
+.cover h1 .dash{color:#9db6ff;margin-right:.25em}
+.cover-proof{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;margin-top:64px;border-top:1px solid rgba(255,255,255,.2)}
+.cover-proof div{padding:20px 20px 0 0}
+.cover-proof b{display:block;font-size:clamp(22px,2.8vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.cover-proof div:first-child b{color:#9db6ff}
+.cover-proof span{font-size:13px;color:#8fa0c2}
+.cover-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:44px}
+.btn{font:inherit;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:.2s;white-space:nowrap}
+.btn-primary{background:#fff;color:var(--navy)}
+.btn-primary:hover{background:#dfe7fb}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn svg{width:16px;height:16px}
+.cover-foot{padding-bottom:28px;font-size:12.5px;color:#6f80a3;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cover-foot .scroll{animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(4px)}}
+
+#contactBtns:empty{display:none}
+/* toast */
+.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:14px 20px;border-radius:14px;font-size:14.5px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.3s;z-index:100;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast i{font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--blue);display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:none}
+.toast small{display:block;color:#9db6ff;font-size:12.5px}
+
+/* hero */
+.hero{padding:120px 0 96px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.22;letter-spacing:-.035em;font-weight:800;color:var(--navy);margin:20px 0 24px}
+.hero p.lead{font-size:clamp(16px,1.8vw,19px);color:var(--sub);max-width:640px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:2px solid var(--navy)}
+.stat{padding:22px 20px 0 0}
+.stat b{display:block;font-size:clamp(26px,3.4vw,38px);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.2}
+.stat b small{font-size:.5em;color:var(--sub);font-weight:600;margin-left:2px}
+.stat span{font-size:13.5px;color:var(--sub)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:56px}
+.flow a{display:block;border:1px solid var(--line);border-radius:14px;padding:20px 22px;transition:.25s;position:relative}
+.flow a:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 10px 30px -18px rgba(19,33,60,.4)}
+.flow .k{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--blue)}
+.flow h3{font-size:18px;color:var(--navy);margin:4px 0 2px;letter-spacing:-.02em}
+.flow p{font-size:13.5px;color:var(--sub)}
+.flow a:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--blue);font-weight:700;background:#fff;z-index:1;font-size:14px}
+
+/* sections */
+section.block{padding:112px 0;border-bottom:1px solid var(--line)}
+section.alt{background:var(--bg-2)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.03em;line-height:1.3;color:var(--navy);font-weight:800}
+.sec-head p{color:var(--sub);margin-top:12px;max-width:620px}
+
+/* resume */
+.resume{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.card h3{font-size:15px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.card h3 i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--blue)}
+.rows li{list-style:none;display:grid;grid-template-columns:92px 1fr;gap:14px;padding:9px 0}
+.rows .d{font-size:13px;color:var(--sub);padding-top:2px}
+.rows b{display:block;font-weight:700;font-size:15px;letter-spacing:-.01em}
+.rows small{display:block;font-size:13.5px;color:var(--sub);line-height:1.55}
+.rows .hl{color:var(--blue);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:600}
+.chip.main{border-color:var(--navy);background:var(--navy);color:#fff}
+.chip.soon{border-style:dashed;color:var(--sub);font-weight:500}
+.chip small{font-size:12px;font-weight:500;opacity:.75}
+.card.wide{grid-column:1/-1}
+.etc{font-size:13.5px;color:var(--sub);margin-top:10px;padding-top:12px;border-top:1px dashed var(--line)}
+
+/* project */
+.proj-top{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:end;margin-bottom:48px}
+.tag{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--navy);padding:6px 12px;border-radius:999px}
+.tag em{color:#9db6ff}
+.proj-top h2{font-size:clamp(30px,4.2vw,48px);line-height:1.2;letter-spacing:-.035em;color:var(--navy);margin:18px 0 12px;font-weight:800}
+.proj-top .one{font-size:18px;color:var(--sub)}
+.meta{border-top:2px solid var(--navy)}
+.meta div{display:grid;grid-template-columns:64px 1fr;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.meta dt{color:var(--sub)}
+.meta dd{font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.step{border-top:3px solid var(--blue-line);padding-top:18px}
+.step.key{border-top-color:var(--blue)}
+.step .k{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em}
+.step h4{font-size:18px;color:var(--navy);margin:6px 0 8px;letter-spacing:-.02em}
+.step p,.step li{font-size:14.5px;color:var(--sub)}
+.step ul{padding-left:16px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;margin-top:32px}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.panel-head h4{font-size:16px;color:var(--navy)}
+.panel-head span{font-size:13px;color:var(--sub)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.kpi{background:var(--bg-2);border-radius:12px;padding:18px 20px}
+.kpi span{font-size:13px;color:var(--sub)}
+.kpi b{display:block;font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.kpi.main{background:var(--navy)}
+.kpi.main span{color:#b8c6e6}.kpi.main b{color:#fff}
+.two{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:start}
+.bars li{list-style:none;display:grid;grid-template-columns:96px 1fr 64px;align-items:center;gap:12px;padding:5px 0;font-size:13.5px}
+.bars .t{height:12px;background:var(--bg-2);border-radius:6px;overflow:hidden}
+.bars .f{height:100%;width:0;background:var(--blue-line);border-radius:6px;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.bars li.top .f{background:var(--blue)}
+.bars .v{text-align:right;color:var(--sub)}
+.bars li.top .v,.bars li.top .n{color:var(--navy);font-weight:700}
+.donut-wrap{display:flex;gap:24px;align-items:center}
+.donut{width:150px;height:150px;border-radius:50%;flex:none;position:relative;background:conic-gradient(var(--navy) 0 40%,var(--blue) 0 60%,#6f93e8 0 80%,#a9c0f2 0 90%,#d6e1f8 0 100%)}
+.donut::after{content:"재원\A구성";white-space:pre;position:absolute;inset:34px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;color:var(--navy);line-height:1.3}
+.legend li{list-style:none;display:flex;align-items:center;gap:8px;font-size:13px;padding:3px 0}
+.legend i{width:10px;height:10px;border-radius:3px;flex:none}
+.legend b{margin-left:auto;padding-left:10px;color:var(--navy)}
+.result{display:flex;gap:20px;align-items:center;margin-top:32px;padding:24px 28px;border-radius:16px;background:var(--navy);color:#fff}
+.result .big{font-size:30px;font-weight:800;color:#9db6ff;flex:none;letter-spacing:-.02em}
+.result p{color:#d5def0;font-size:15px}
+.result p b{color:#fff}
+.bridge{margin-top:56px;display:flex;align-items:center;gap:16px;color:var(--sub);font-size:15px}
+.bridge::before{content:"";flex:1;height:1px;background:var(--line)}
+.bridge a{color:var(--blue);font-weight:700;white-space:nowrap}
+
+/* before/after */
+.ba li{list-style:none;padding:12px 0;border-bottom:1px solid var(--line)}
+.ba li:last-child{border:0}
+.ba .lab{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}
+.ba .lab b{color:var(--navy)}
+.ba .lab .delta{color:var(--blue);font-weight:700}
+.ba .row{display:grid;grid-template-columns:44px 1fr 70px;align-items:center;gap:10px;font-size:12.5px;color:var(--sub);margin:4px 0}
+.ba .row .t{height:10px;background:var(--bg-2);border-radius:5px;overflow:hidden}
+.ba .row .f{height:100%;width:0;border-radius:5px;background:#c3cad6;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.ba .row.after .f{background:var(--blue)}
+.ba .row.after{color:var(--navy);font-weight:700}
+.ba .row span:last-child{text-align:right}
+.bep{position:relative;margin-top:8px}
+.bep .seats{display:grid;grid-template-columns:repeat(30,1fr);gap:3px}
+.bep .seats i{aspect-ratio:1;border-radius:2px;background:var(--bg-2)}
+.bep .seats i.s{background:var(--blue-line)}
+.bep .seats i.p{background:var(--blue)}
+.bep-note{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--sub);margin-top:12px}
+.bep-note i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:p}
+.pipe>div{padding:22px 20px;border:1px solid var(--line);margin-left:-1px;background:#fff;position:relative}
+.pipe>div:first-child{border-radius:14px 0 0 14px;margin-left:0}
+.pipe>div:last-child{border-radius:0 14px 14px 0;background:var(--navy);border-color:var(--navy)}
+.pipe>div:last-child *{color:#fff!important}
+.pipe .k{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em}
+.pipe h5{font-size:16px;color:var(--navy);margin:6px 0 4px}
+.pipe p{font-size:13.5px;color:var(--sub)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.vs>div{border-radius:14px;padding:22px 24px;background:var(--bg-2)}
+.vs>div.after{background:var(--blue-soft);border:1px solid var(--blue-line)}
+.vs .k{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--sub)}
+.vs .after .k{color:var(--blue)}
+.vs p{font-size:15px;margin-top:6px}
+
+/* small projects */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filters button{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;padding:8px 16px;border-radius:999px;cursor:pointer;color:var(--sub);transition:.2s}
+.filters button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mini{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:.25s}
+.mini:hover{border-color:var(--blue-line);box-shadow:0 12px 30px -20px rgba(19,33,60,.45)}
+.mini.hide{display:none}
+.mini .cat{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.04em}
+.mini h4{font-size:17px;color:var(--navy);margin:8px 0 8px;letter-spacing:-.02em;line-height:1.4}
+.mini p{font-size:14px;color:var(--sub);flex:1}
+.mini .out{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;font-weight:600;color:var(--navy);display:flex;justify-content:space-between;gap:8px}
+.mini .out a{color:var(--blue)}
+
+/* closing */
+.closing{background:var(--navy);color:#fff;padding:128px 0 72px}
+.closing h2{font-size:clamp(34px,5vw,56px);line-height:1.22;letter-spacing:-.035em;font-weight:800}
+.closing p{color:#b8c6e6;font-size:18px;margin-top:24px;max-width:620px}
+.mindset{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.18)}
+.mindset>div{padding:22px 20px 0 0}
+.mindset .k{font-size:12px;letter-spacing:.12em;font-weight:700;color:#9db6ff}
+.mindset p{font-size:15px;color:#fff;margin-top:6px}
+.contact{margin-top:72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:#8fa0c2;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.contact a{color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 18px;border-radius:999px;transition:.2s}
+.contact a:hover{background:#fff;color:var(--navy)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:900px){
+  .menu{display:none}
+  .sec-head,.proj-top,.two{grid-template-columns:1fr;gap:24px}
+  .resume,.grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .pipe{grid-template-columns:1fr 1fr}
+  .pipe>div,.pipe>div:first-child,.pipe>div:last-child{border-radius:0;margin:0 0 -1px -1px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .hero{padding:80px 0 64px}
+  section.block{padding:80px 0}
+  .stats{grid-template-columns:1fr 1fr;row-gap:12px}
+  .flow,.resume,.grid,.kpis,.vs,.mindset{grid-template-columns:1fr}
+  .flow a:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .card,.panel{padding:22px}
+  .rows li{grid-template-columns:76px 1fr}
+  .bars li{grid-template-columns:80px 1fr 56px}
+  .donut-wrap{flex-direction:column;align-items:flex-start}
+  .result{flex-direction:column;align-items:flex-start;gap:6px}
+  .pipe{grid-template-columns:1fr}
+  .bridge{flex-direction:column;align-items:flex-start;gap:6px}.bridge::before{display:none}
+  .bep .seats{grid-template-columns:repeat(24,1fr)}
+  .cover-proof{grid-template-columns:repeat(3,1fr);row-gap:8px}
+  .cover-proof div:first-child{grid-column:1/-1}
+  .cover-body{padding-top:48px;padding-bottom:48px}
+  .btn{flex:1;justify-content:center;padding:14px 16px;font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- ============ COVER ============ -->
+<section class="cover" id="cover" data-sec="cover">
+  <div class="wrap cover-top">
+    <b>이소정</b>
+    <div class="cover-nav" aria-label="목차 바로가기">
+      <a href="#resume" data-track="covernav_resume">이력</a>
+      <a href="#p1" data-track="covernav_p1">프로젝트 1</a>
+      <a href="#p2" data-track="covernav_p2">프로젝트 2</a>
+      <a href="#p3" data-track="covernav_p3">프로젝트 3</a>
+      <a href="#mini" data-track="covernav_mini">소규모 프로젝트</a>
+    </div>
+  </div>
+  <div class="wrap cover-body">
+    <div>
+      <div class="cover-label">PROJECT 01 · 외교부 YCAFE GreenBridge</div>
+      <h1>아이디어에 <em style="color:#9db6ff">원가</em>를 매겼습니다.
+        <span class="then"><span class="dash">—</span>이제, <em>회사의 숫자</em>에 근거를 더하겠습니다.</span>
+      </h1>
+      <div class="cover-proof">
+        <div><b class="num">$286,350</b><span>직접 편성한 한-아세안 사업 예산 (1년차)</span></div>
+        <div><b class="num">3주</b><span>다국적 팀 사업안 완성</span></div>
+        <div><b class="num">9개</b><span>항목별 사전원가 산출</span></div>
+        <div><b>1위</b><span>청중평가</span></div>
+      </div>
+      <div class="cover-cta">
+        <a class="btn btn-primary" href="#p1" data-track="cover_p1">예산 편성 과정 보기 <span aria-hidden="true">→</span></a>
+        <button type="button" class="btn btn-ghost copy-mail" data-track="mail_cover">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>메일 보내기
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap cover-foot">
+    <span>이화여자대학교 정치외교학 · 경영학 복수전공</span>
+    <a href="#top" class="scroll">SCROLL ↓</a>
+  </div>
+</section>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">이소정<span>Accounting · Finance</span></a>
+    <div class="menu" id="menu">
+      <a href="#resume">이력</a>
+      <a href="#p1">프로젝트 1</a>
+      <a href="#p2">프로젝트 2</a>
+      <a href="#p3">프로젝트 3</a>
+      <a href="#mini">소규모 프로젝트</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top" data-sec="hero">
+  <div class="wrap">
+    <div class="eyebrow rv">Accounting · Finance · Data Analysis</div>
+    <h1 class="rv">숫자 뒤 맥락을 이해하고,<br><em>재무적 역량을 직접</em> 펼쳐본 사람</h1>
+    <p class="lead rv">정치외교학으로 국제 정세와 거시경제의 흐름을 읽고, 경영학으로 그 흐름을 재무적 수치로 풀어냅니다. 예산을 세우고, 비용을 관리하고, 데이터로 판단해 온 과정을 소개합니다.</p>
+
+    <div class="stats rv">
+      <div class="stat"><b class="num">4.21<small>/4.5</small></b><span>학점 (4.5 만점 환산)</span></div>
+      <div class="stat"><b class="num">2<small>개</small></b><span>재경관리사 · 투자자산운용사</span></div>
+      <div class="stat"><b class="num">7→40<small>%</small></b><span>공연 마진률 개선</span></div>
+      <div class="stat"><b class="num">1<small>위</small></b><span>YCAFE 사업안 청중평가</span></div>
+    </div>
+
+    <div class="flow rv">
+      <a href="#p1" data-track="flow_p1"><div class="k">01 · PLAN</div><h3>예산을 세우고</h3><p>사전원가→목표원가로 사업 예산 편성</p></a>
+      <a href="#p2" data-track="flow_p2"><div class="k">02 · CONTROL</div><h3>비용을 관리하고</h3><p>손익분기 공유로 제작비 14% 절감</p></a>
+      <a href="#p3" data-track="flow_p3"><div class="k">03 · ANALYZE</div><h3>데이터로 판단합니다</h3><p>반응 데이터 분석으로 최다 조회수</p></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ RESUME ============ -->
+<section class="block alt" id="resume" data-sec="resume">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">00 · Profile</div>
+      <div>
+        <h2>흐름을 읽는 눈에<br>숫자를 다루는 손을 더했습니다</h2>
+        <p>전공·자격으로 이론을 다지고, 정산·예산·회계보고 실무를 반복하며 재무 역량을 쌓아 왔습니다.</p>
+      </div>
+    </div>
+
+    <div class="resume">
+      <div class="card rv">
+        <h3><i>EDUCATION</i>학력</h3>
+        <ul class="rows">
+          <li><span class="d">2021.03 –</span><div><b>이화여자대학교</b><small>정치외교학 주전공 · 경영학 복수전공 수료<br>GPA <span class="hl num">4.21</span> / 4.5 (환산)</small></div></li>
+          <li><span class="d">교환학생</span><div><b>이탈리아 교환학기</b><small>유럽 시장과 소비자를 현지에서 경험하며 글로벌 비즈니스 환경 이해</small></div></li>
+        </ul>
+      </div>
+
+      <div class="card rv">
+        <h3><i>WORK</i>경력</h3>
+        <ul class="rows">
+          <li><span class="d">6개월</span><div><b>메가커피 · 매니저</b><small>일일 현금·카드 매출 정산, 재고 확인 및 발주 관리</small></div></li>
+          <li><span class="d">8개월</span><div><b>영어학원 · 강사</b><small>학습 내용을 구조화해 수준별로 전달</small></div></li>
+        </ul>
+      </div>
+
+      <div class="card rv">
+        <h3><i>LEARNING</i>학습</h3>
+        <ul class="rows">
+          <li><span class="d">학회</span><div><b>국제정치 RT</b><small>국제정치 이슈 토론 및 발제</small></div></li>
+          <li><span class="d">학회</span><div><b>Ewha Newsweek Club</b><small>영자신문 분석 및 이슈 발표</small></div></li>
+          <li><span class="d">2026</span><div><b>정책 토론대회 <span class="hl">16강 진출</span></b><small>대미 디지털 협력·AI 경쟁력을 위한 AI 규제 완화 의제 (찬성 측)</small></div></li>
+        </ul>
+      </div>
+
+      <div class="card rv">
+        <h3><i>AWARDS</i>수상</h3>
+        <ul class="rows">
+          <li><span class="d">2022.07</span><div><b>한아시아 청년포럼 국제학술지대회 우수상</b><small>백신 빈부격차 문제 분석·발표</small></div></li>
+          <li><span class="d">2024.11</span><div><b>YCAFE 한-아세안 사업안 청중평가 1위</b><small>외교부 YCAFE · GreenBridge 프로젝트</small></div></li>
+        </ul>
+      </div>
+
+      <div class="card wide rv">
+        <h3><i>EXPERIENCE</i>경험</h3>
+        <ul class="rows">
+          <li><span class="d">2022.01</span><div><b>이화봉사단 국내교육봉사</b><small>춘천지역아동센터 초등학생 대상 경제교육 40시간 — 경제·금융 개념을 눈높이에 맞춰 구조화</small></div></li>
+          <li><span class="d">2022-2</span><div><b>사회과학대학 비상대책위원회</b><small>단과대 SNS 운영 및 <span class="hl">예산안·회계 결과 공개 보고</span></small></div></li>
+          <li><span class="d">2023.03–05</span><div><b>컬컴 서포터즈</b><small>영어회화 커뮤니티 홍보 이벤트 기획·운영, <span class="hl">세부 예산 직접 편성·집행</span></small></div></li>
+          <li><span class="d">2023</span><div><b>외교부 제2대 청년사절 · 팀장</b><small>안보리 비상임이사국 진출 홍보, 팀 <span class="hl">활동 경비·증빙 취합 및 정산 관리</span></small></div></li>
+          <li><span class="d">2024.10–11</span><div><b>외교부 YCAFE</b><small>아세안 학생들과 한-아세안 사업 기획, <span class="hl">사업 예산안 편성</span> 및 최종 발표</small></div></li>
+          <li><span class="d">2024 –</span><div><b>라임라이트 연극동아리 · 총무</b><small>공연 제작비·회비 관리, <span class="hl">손익분기 기반 예산 운영</span></small></div></li>
+        </ul>
+        <p class="etc">그 외 · 이화투데이리포터 · 조선일보 ALC 서포터즈 · KrIGF 참가</p>
+      </div>
+
+      <div class="card wide rv">
+        <h3><i>CERTIFICATES</i>자격 · 어학</h3>
+        <div class="chips">
+          <span class="chip main">재경관리사 <small>회계·세무·원가</small></span>
+          <span class="chip main">투자자산운용사 <small>투자·금융시장</small></span>
+          <span class="chip">컴퓨터활용능력 2급</span>
+          <span class="chip">TOEIC <span class="num">910</span></span>
+          <span class="chip">OPIc IH</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT 1 ============ -->
+<section class="block" id="p1" data-sec="project1">
+  <div class="wrap">
+    <div class="proj-top">
+      <div class="rv">
+        <span class="tag">PROJECT 01 <em>· PLAN</em></span>
+        <h2>GreenBridge:<br>ASEAN-ROK Twin Transition</h2>
+        <p class="one">아이디어가 아닌, <b>비용과 수익성을 고려한 실제 사업</b>으로 설계했습니다.</p>
+      </div>
+      <dl class="meta rv">
+        <div><dt>주관</dt><dd>외교부 YCAFE</dd></div>
+        <div><dt>기간</dt><dd class="num">2024.10.20 – 11.08 (3주)</dd></div>
+        <div><dt>팀</dt><dd>한국·아세안 학생 다국적 팀</dd></div>
+        <div><dt>역할</dt><dd>사업 예산안 편성 · 최종 발표</dd></div>
+      </dl>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><div class="k">SITUATION</div><h4>3주, 여러 나라의 이해관계</h4><p>한-아세안 청년이 디지털 기술로 환경 문제를 해결하도록 돕는 사업을, 각국의 이해관계와 협력 구조를 고려해 3주 안에 완성해야 했습니다.</p></div>
+      <div class="step key rv"><div class="k">APPROACH</div><h4>원가에서 출발한 예산</h4><ul><li>해외 기업의 Twin Transition 사례로 수익성 비교</li><li>사업을 <b>교육·운영·홍보</b>로 나눠 사전원가 산출</li><li>목표원가를 역산해 항목별 예산 편성</li></ul></div>
+      <div class="step rv"><div class="k">DESIGN</div><h4>재원까지 설계</h4><p>단일 재원 의존을 피하기 위해 한-아세안 협력기금, 국제개발은행, 정부·산업계로 재원 조달 구조를 분산했습니다.</p></div>
+    </div>
+
+    <div class="panel rv">
+      <div class="panel-head"><h4>사업 예산안 (1년차)</h4><span>단위: USD</span></div>
+      <div class="kpis">
+        <div class="kpi main"><span>총 예산</span><b class="num">$286,350</b></div>
+        <div class="kpi"><span>직접비 소계</span><b class="num">$249,000</b></div>
+        <div class="kpi"><span>운영·관리비 (직접비의 15%)</span><b class="num">$37,350</b></div>
+      </div>
+      <div class="two">
+        <ul class="bars" id="gbBars"></ul>
+        <div>
+          <div class="donut-wrap">
+            <div class="donut" role="img" aria-label="재원 구성: 한-아세안 협력기금 40%, 세계은행 20%, ADB 20%, 정부 재원 10%, 산업계 후원 10%"></div>
+            <ul class="legend">
+              <li><i style="background:var(--navy)"></i>한-아세안 협력기금<b>40%</b></li>
+              <li><i style="background:var(--blue)"></i>World Bank<b>20%</b></li>
+              <li><i style="background:#6f93e8"></i>ADB<b>20%</b></li>
+              <li><i style="background:#a9c0f2"></i>정부 재원<b>10%</b></li>
+              <li><i style="background:#d6e1f8"></i>산업계 후원<b>10%</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result rv">
+      <div class="big">청중평가 1위</div>
+      <p>교육 워크숍 · SNS 캠페인 · Green Innovation Competition · 멘토링 · 후속 지원까지 <b>프로그램마다 비용 근거를 갖춘 사업안</b>으로 평가받았습니다.</p>
+    </div>
+
+    <div class="bridge rv">세운 예산은 집행 과정에서 검증됩니다. <a href="#p2">프로젝트 2 · 비용 관리 →</a></div>
+  </div>
+</section>
+
+<!-- ============ PROJECT 2 ============ -->
+<section class="block alt" id="p2" data-sec="project2">
+  <div class="wrap">
+    <div class="proj-top">
+      <div class="rv">
+        <span class="tag">PROJECT 02 <em>· CONTROL</em></span>
+        <h2>공연 마진률<br><em class="num">7% → 40%</em></h2>
+        <p class="one">고정비와 변동비를 나누자, 줄일 곳과 지킬 곳이 보였습니다.</p>
+      </div>
+      <dl class="meta rv">
+        <div><dt>소속</dt><dd>라임라이트 연극동아리</dd></div>
+        <div><dt>기간</dt><dd>2024 – 현재</dd></div>
+        <div><dt>규모</dt><dd class="num">30석 × 8회 (총 240석) · 티켓 15,000원</dd></div>
+        <div><dt>역할</dt><dd>총무 · 제작비·회비 관리</dd></div>
+      </dl>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><div class="k">PROBLEM</div><h4>팔아도 남지 않는 구조</h4><p>제작비 약 250만 원, 관객은 약 180명. 마진률이 7% 수준에 그쳐, 공연이 끝나도 다음 공연을 위한 여유 자금이 거의 남지 않았습니다.</p></div>
+      <div class="step key rv"><div class="k">APPROACH</div><h4>숫자로 공유하고 조율</h4><ul><li>지출을 엑셀로 정리해 <b>고정비/변동비 분리</b></li><li>손익분기점 <b class="num">약 167석</b>을 팀 전체에 공유</li><li>파트장과 항목별 우선순위 조율</li></ul></div>
+      <div class="step rv"><div class="k">ACTION</div><h4>비용은 줄이고 관객은 늘리고</h4><ul><li>소품·의상 재사용으로 제작비 절감</li><li>사전 예매 도입으로 관객 수 사전 확보</li><li>회차별 예약률을 확인해 <b>저조한 회차를 집중 홍보</b>, 관객 <b class="num">240명</b>으로 확대</li><li>팀원별 회비·필요 경비 직접 취합</li></ul></div>
+    </div>
+
+    <div class="panel rv">
+      <div class="panel-head"><h4>Before / After</h4><span>목표 마진률 30% 도전</span></div>
+      <div class="two">
+        <ul class="ba">
+          <li><div class="lab"><b>제작비</b><span class="delta">−14%</span></div>
+            <div class="row"><span>Before</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">250만 원</span></div>
+            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="86"></div></div><span class="num">215만 원</span></div></li>
+          <li><div class="lab"><b>관객 수</b><span class="delta">+33%</span></div>
+            <div class="row"><span>Before</span><div class="t"><div class="f" data-w="75"></div></div><span class="num">180명</span></div>
+            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">240명</span></div></li>
+          <li><div class="lab"><b>마진률</b><span class="delta">+33%p</span></div>
+            <div class="row"><span>Before</span><div class="t"><div class="f" data-w="18"></div></div><span class="num">7%</span></div>
+            <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">40%</span></div></li>
+        </ul>
+        <div>
+          <div class="panel-head" style="margin-bottom:12px"><h4 style="font-size:14px">손익분기와 관객 (총 240석)</h4></div>
+          <div class="bep"><div class="seats" id="seats" role="img" aria-label="총 240석 중 손익분기 167석, 최종 관객 240명"></div></div>
+          <div class="bep-note">
+            <span><i style="background:var(--blue-line)"></i>손익분기 167석</span>
+            <span><i style="background:var(--blue)"></i>손익분기 초과 이익 구간 (168~240석)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result rv">
+      <div class="big">동아리 기준으로</div>
+      <p>목표였던 마진률 30%를 넘어 <b>약 40%</b>를 달성했고, 이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
+    </div>
+
+    <div class="bridge rv">관리의 다음 단계는, 결과가 나오기 전에 데이터로 판단하는 것입니다. <a href="#p3">프로젝트 3 · 데이터 분석 →</a></div>
+  </div>
+</section>
+
+<!-- ============ PROJECT 3 ============ -->
+<section class="block" id="p3" data-sec="project3">
+  <div class="wrap">
+    <div class="proj-top">
+      <div class="rv">
+        <span class="tag">PROJECT 03 <em>· ANALYZE</em></span>
+        <h2>감이 아닌 근거로,<br>한 학기 <em>최다 조회수</em></h2>
+        <p class="one">콘텐츠 반응을 데이터로 분석해 다음 기획의 기준을 만들었습니다.</p>
+      </div>
+      <dl class="meta rv">
+        <div><dt>소속</dt><dd>이화투데이리포터</dd></div>
+        <div><dt>도구</dt><dd>AI 분석 · Excel</dd></div>
+        <div><dt>데이터</dt><dd>기존 게시글 댓글·조회수</dd></div>
+        <div><dt>역할</dt><dd>기획 · 분석 · 콘텐츠 제작</dd></div>
+      </dl>
+    </div>
+
+    <div class="pipe rv">
+      <div><div class="k">STEP 1</div><h5>데이터 수집</h5><p>기존 게시글의 조회수와 댓글 반응을 모음</p></div>
+      <div><div class="k">STEP 2</div><h5>패턴 분석</h5><p>AI로 주제·형식별 반응 패턴 도출</p></div>
+      <div><div class="k">STEP 3</div><h5>재구조화·비교</h5><p>Excel로 기준을 맞춰 정리하고 비교</p></div>
+      <div><div class="k">INSIGHT</div><h5>전문직 시험 합격자 인터뷰</h5><p>가장 높은 반응 → 다음 콘텐츠에 반영</p></div>
+    </div>
+
+    <div class="vs">
+      <div class="rv"><div class="k">BEFORE</div><p>어떤 콘텐츠가 반응을 얻을지 <b>감에 의존</b>해 기획</p></div>
+      <div class="after rv"><div class="k">AFTER</div><p>반응 데이터로 원인을 찾고 <b>근거 있는 기획</b>으로 연결</p></div>
+    </div>
+
+    <div class="result rv">
+      <div class="big">학기 최다 조회</div>
+      <p>분석 결과를 반영한 게시글이 한 학기 최다 조회수를 기록했습니다. 재무에서도 <b>숫자로 원인을 찾고, 개선으로 연결하는 방식</b>은 같다고 생각합니다.</p>
+    </div>
+
+    <div class="bridge rv">이 세 가지 방식은 작은 프로젝트에서도 반복되었습니다. <a href="#mini">소규모 프로젝트 →</a></div>
+  </div>
+</section>
+
+<!-- ============ SMALL PROJECTS ============ -->
+<section class="block alt" id="mini" data-sec="mini">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">04 · More Projects</div>
+      <div>
+        <h2>작은 프로젝트에서도<br>계획·관리·분석을 반복했습니다</h2>
+      </div>
+    </div>
+
+    <div class="filters rv" id="filters">
+      <button class="on" data-f="all">전체</button>
+      <button data-f="fin">예산·회계</button>
+      <button data-f="data">리서치·분석</button>
+      <button data-f="plan">기획·마케팅</button>
+    </div>
+
+    <div class="grid">
+      <article class="mini rv" data-c="fin"><span class="cat">예산·회계</span><h4>단과대 예산안·회계 결과 보고</h4><p>사회과학대학 비상대책위원회에서 예산 편성·집행 결과를 확인하고 학생들에게 투명하게 공개·보고했습니다.</p><div class="out"><span>회계정보 확인 · 보고</span><span>2022</span></div></article>
+      <article class="mini rv" data-c="fin"><span class="cat">예산·회계</span><h4>홍보 이벤트 세부 예산 편성</h4><p>컬컴 서포터즈에서 행사 목적과 예상 참여 규모를 바탕으로 예산을 직접 짜고, 집행·운영까지 담당했습니다.</p><div class="out"><span>비용 계획 · 집행</span><span>2023</span></div></article>
+      <article class="mini rv" data-c="fin"><span class="cat">예산·회계</span><h4>청년사절 활동 경비 정산</h4><p>팀장으로서 팀원 지출 내역과 영수증 증빙을 취합하고, 기준에 맞게 인정되도록 정산 절차를 관리했습니다.</p><div class="out"><span>증빙 검토 · 정산</span><span>2023</span></div></article>
+      <article class="mini rv" data-c="data"><span class="cat">리서치·분석</span><h4>백신 빈부격차 학술 발표</h4><p>국가 간 백신 접근성 격차를 국제정치·경제적 관점에서 분석해 발표했습니다.</p><div class="out"><span>국제학술지대회 우수상</span><span>2022</span></div></article>
+      <article class="mini rv" data-c="data"><span class="cat">리서치·분석</span><h4>커스텀 김밥 브랜드 마케팅 리서치</h4><p>조사 설계부터 설문 문항, 데이터 분석, 보고서까지 리서치 전 과정을 수행했습니다.</p><div class="out"><span>조사설계 · 설문 · 보고서</span><span>과제</span></div></article>
+      <article class="mini rv" data-c="data plan"><span class="cat">리서치·기획</span><h4>하회마을 방탈출 사업 기획</h4><p>안동의 역사·지리, 방문객 데이터를 조사해 입지 선정 논리를 세우고 역사 콘텐츠를 사업으로 기획했습니다.</p><div class="out"><span>입지 분석 · 발표</span><span>프로젝트</span></div></article>
+      <article class="mini rv" data-c="plan"><span class="cat">기획·마케팅</span><h4>카프리썬 제로 'ZERO BUM' 캠페인</h4><p>농심 공모전 출품작. 캠페인 기획과 함께 칵테일 레시피 웹앱을 직접 만들어 배포했습니다.</p><div class="out"><span>캠페인 · 웹앱</span><a href="https://thwjd3333.github.io/Caprisun/" target="_blank" rel="noopener" data-track="zerobum_app">웹앱 보기 ↗</a></div></article>
+      <article class="mini rv" data-c="plan data"><span class="cat">기획·마케팅</span><h4>한양 Classic Seoul Collection</h4><p>유럽 소비자를 겨냥한 조선 미학 콘셉트 뷰티 캠페인. 헤리티지 K-뷰티 시장 데이터를 근거로 기획했습니다.</p><div class="out"><span>시장 데이터 · 캠페인</span><span>포트폴리오</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<footer class="closing" data-sec="closing">
+  <div class="wrap">
+    <div class="eyebrow rv" style="color:#9db6ff">Accounting Mindset</div>
+    <h2 class="rv" style="margin-top:20px">정확하게 관리하고,<br>숫자로 설득하겠습니다.</h2>
+    <p class="rv">예산과 회계의 정확성에 데이터 분석력을 더하고, 글로벌 사업환경까지 이해하는 재무 인재로 성장하겠습니다.</p>
+    <div class="mindset rv">
+      <div><div class="k">WHY</div><p>왜 필요한가</p></div>
+      <div><div class="k">HOW</div><p>어떻게 집행되는가</p></div>
+      <div><div class="k">RESULT</div><p>결과는 무엇인가</p></div>
+    </div>
+    <div class="contact">
+      <span>이소정 · 이화여자대학교 정치외교학 · 경영학 복수전공</span>
+      <span style="display:flex;gap:10px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary copy-mail" data-track="mail_closing">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>메일 보내기
+        </button>
+        <span id="contactBtns"></span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== 설정 ===== */
+const CONFIG = {
+  TRACK_URL: '',          // Apps Script 웹앱 URL (README 참고). 비워두면 추적 꺼짐
+  EMAIL: 'thwjd0134@ewhain.net',   // '메일 보내기' 버튼이 복사하는 주소
+  PDF: ''                 // 포트폴리오 PDF 경로 예: 'portfolio.pdf'
+};
+
+/* ===== 프로젝트1 예산 막대 ===== */
+const GB = [["경진대회",80000],["교육 운영",60000],["캠페인",20000],["장학금",20000],["시상·인센티브",19000],["인턴십",15000],["후속 지원금",15000],["멘토링",10000],["포럼 참관",10000]];
+const gbMax = GB[0][1];
+document.getElementById('gbBars').innerHTML = GB.map((r,i)=>
+  `<li class="${i<2?'top':''}"><span class="n">${r[0]}</span><div class="t"><div class="f" data-w="${r[1]/gbMax*100}"></div></div><span class="v num">$${r[1].toLocaleString()}</span></li>`).join('');
+
+/* ===== 프로젝트2 좌석 (30석 × 8회 = 240석, 1칸 = 1석) ===== */
+(function(){
+  const total=240, bep=167, aud=240;
+  let h=''; for(let i=0;i<total;i++) h+=`<i class="${i<bep?'s':i<aud?'p':''}"></i>`;
+  document.getElementById('seats').innerHTML=h;
+})();
+
+/* ===== 연락처 ===== */
+(function(){
+  const box=document.getElementById('contactBtns'); let h='';
+  if(CONFIG.PDF) h+=`<a href="${CONFIG.PDF}" target="_blank" data-track="pdf">PDF 포트폴리오</a>`;
+  box.innerHTML=h;
+})();
+
+/* ===== 메일 복사 + 알림 ===== */
+const toast=document.createElement('div');
+toast.className='toast'; toast.setAttribute('role','status'); toast.setAttribute('aria-live','polite');
+document.body.appendChild(toast);
+let toastTimer;
+function showToast(title,sub){
+  toast.innerHTML=`<i>✓</i><div>${title}${sub?`<small>${sub}</small>`:''}</div>`;
+  toast.classList.add('show'); clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove('show'),2600);
+}
+async function copyText(t){
+  try{ await navigator.clipboard.writeText(t); return true }catch(e){}
+  try{
+    const ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly','');
+    ta.style.cssText='position:fixed;opacity:0'; document.body.appendChild(ta); ta.select();
+    const ok=document.execCommand('copy'); ta.remove(); return ok;
+  }catch(e){ return false }
+}
+document.querySelectorAll('.copy-mail').forEach(b=>b.addEventListener('click',async()=>{
+  const ok=await copyText(CONFIG.EMAIL);
+  if(ok) showToast('메일이 복사되었습니다', CONFIG.EMAIL);
+  else showToast('메일 주소', CONFIG.EMAIL);
+}));
+
+/* ===== 필터 ===== */
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;
+  document.querySelectorAll('.mini').forEach(m=>m.classList.toggle('hide',f!=='all'&&!m.dataset.c.split(' ').includes(f)));
+  track('filter',{label:f});
+});
+
+/* ===== 스크롤 연출 ===== */
+const io=new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting) return;
+  en.target.classList.add('in');
+  en.target.querySelectorAll('.f[data-w]').forEach(f=>f.style.width=f.dataset.w+'%');
+  io.unobserve(en.target);
+}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+const links=[...document.querySelectorAll('#menu a')];
+let maxScroll=0;
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement, p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('progress').style.width=p+'%';
+  maxScroll=Math.max(maxScroll,Math.round(p));
+  let cur=''; document.querySelectorAll('section[id]').forEach(s=>{ if(s.getBoundingClientRect().top<120) cur=s.id; });
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* ===== 스프레드시트 추적 ===== */
+function store(k,gen,area){ try{ let v=area.getItem(k); if(!v){v=gen();area.setItem(k,v)} return v }catch(e){ return gen() } }
+const rid=()=>Math.random().toString(36).slice(2,10);
+const SID=store('pf_sid',rid,window.sessionStorage), VID=store('pf_vid',rid,window.localStorage);
+const REF=new URLSearchParams(location.search).get('ref')||'direct';
+const START=Date.now();
+function track(event,extra={}){
+  if(!CONFIG.TRACK_URL) return;
+  const body=JSON.stringify(Object.assign({
+    event, ref:REF, sid:SID, vid:VID,
+    referrer:document.referrer||'', path:location.pathname,
+    device:/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop',
+    lang:navigator.language
+  },extra));
+  try{ fetch(CONFIG.TRACK_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body}) }catch(e){}
+}
+track('visit');
+const seen=new Set();
+const secIO=new IntersectionObserver(es=>es.forEach(en=>{
+  const s=en.target.dataset.sec;
+  if(en.isIntersecting&&!seen.has(s)){ seen.add(s); track('section',{section:s,duration:Math.round((Date.now()-START)/1000)}) }
+}),{threshold:.35});
+document.querySelectorAll('[data-sec]').forEach(el=>secIO.observe(el));
+document.addEventListener('click',e=>{ const a=e.target.closest('[data-track]'); if(a) track('click',{label:a.dataset.track}) });
+let left=false;
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden'&&!left){ left=true; track('leave',{duration:Math.round((Date.now()-START)/1000),scroll:maxScroll,section:[...seen].join('>')}) }
+  if(document.visibilityState==='visible') left=false;
+});
+</script>
+</body>
+</html>
