@@ -72,7 +72,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .cover-foot .scroll{animation:bob 2s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(4px)}}
 
-#contactBtns:empty{display:none}
+.mail-text{margin-top:16px;font-size:14px;color:#8fa0c2;letter-spacing:.01em}
+.mail-text .mail-addr{color:#fff;font-weight:600;user-select:all}
+.closing .closing-mail{margin-top:16px;font-size:15px;white-space:normal}
 /* toast */
 .toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:14px 20px;border-radius:14px;font-size:14.5px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.3s;z-index:100;max-width:calc(100% - 32px)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -109,7 +111,7 @@ section.alt{background:var(--bg-2)}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
 .card h3{font-size:15px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .card h3 i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--blue)}
-.rows li{list-style:none;display:grid;grid-template-columns:92px 1fr;gap:14px;padding:9px 0}
+.rows li{list-style:none;display:grid;grid-template-columns:118px 1fr;gap:14px;padding:9px 0}
 .rows .d{font-size:13px;color:var(--sub);padding-top:2px}
 .rows b{display:block;font-weight:700;font-size:15px;letter-spacing:-.01em}
 .rows small{display:block;font-size:13.5px;color:var(--sub);line-height:1.55}
@@ -120,6 +122,15 @@ section.alt{background:var(--bg-2)}
 .chip.soon{border-style:dashed;color:var(--sub);font-weight:500}
 .chip small{font-size:12px;font-weight:500;opacity:.75}
 .card.wide{grid-column:1/-1}
+.certs li{list-style:none;display:grid;grid-template-columns:1.3fr 1.2fr 90px 1.2fr;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.certs li:last-child{border-bottom:0}
+.certs b{font-weight:700;font-size:15px}
+.certs li.main b{color:var(--navy)}
+.certs li.main b::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--blue);margin-right:8px;vertical-align:3px}
+.certs .iss{color:var(--sub)}
+.certs .dt{color:var(--navy);font-weight:600}
+.certs .no{color:var(--sub);font-size:13px;text-align:right}
+@media (max-width:640px){.certs li{grid-template-columns:1fr auto;row-gap:2px}.certs .iss{grid-column:1}.certs .dt{grid-row:1;grid-column:2;text-align:right}.certs .no{grid-column:2;grid-row:2}}
 .etc{font-size:13.5px;color:var(--sub);margin-top:10px;padding-top:12px;border-top:1px dashed var(--line)}
 
 /* project */
@@ -187,6 +198,18 @@ section.alt{background:var(--bg-2)}
 .bep .seats i{aspect-ratio:1;border-radius:2px;background:var(--bg-2)}
 .bep .seats i.s{background:var(--blue-line)}
 .bep .seats i.p{background:var(--blue)}
+.bep .seats i.m{background:#7d9ae6}
+.insight{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.insight .k{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--blue)}
+.insight p{font-size:14.5px;color:var(--sub);margin-top:6px}
+.insight p b{color:var(--navy)}
+.formula>div{background:var(--bg-2);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.formula>div:last-child{margin-bottom:0}
+.formula span{display:block;font-size:12.5px;color:var(--sub)}
+.formula b{font-size:14.5px;color:var(--navy)}
+.formula .after{background:var(--blue-soft);border:1px solid var(--blue-line)}
+.formula .after b{color:var(--blue)}
+@media (max-width:900px){.insight{grid-template-columns:1fr}}
 .bep-note{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--sub);margin-top:12px}
 .bep-note i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 
@@ -199,6 +222,8 @@ section.alt{background:var(--bg-2)}
 .pipe .k{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em}
 .pipe h5{font-size:16px;color:var(--navy);margin:6px 0 4px}
 .pipe p{font-size:13.5px;color:var(--sub)}
+.pipe p b{color:var(--navy)}
+.p3-kpis{margin:20px 0 0;grid-template-columns:repeat(2,1fr)}
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
 .vs>div{border-radius:14px;padding:22px 24px;background:var(--bg-2)}
 .vs>div.after{background:var(--blue-soft);border:1px solid var(--blue-line)}
@@ -255,7 +280,7 @@ section.alt{background:var(--bg-2)}
   .flow,.resume,.grid,.kpis,.vs,.mindset{grid-template-columns:1fr}
   .flow a:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
   .card,.panel{padding:22px}
-  .rows li{grid-template-columns:76px 1fr}
+  .rows li{grid-template-columns:92px 1fr;gap:10px}
   .bars li{grid-template-columns:80px 1fr 56px}
   .donut-wrap{flex-direction:column;align-items:flex-start}
   .result{flex-direction:column;align-items:flex-start;gap:6px}
@@ -291,9 +316,9 @@ section.alt{background:var(--bg-2)}
         <span class="then"><span class="dash">—</span>이제, <em>회사의 숫자</em>에 근거를 더하겠습니다.</span>
       </h1>
       <div class="cover-proof">
-        <div><b class="num">$286,350</b><span>직접 편성한 한-아세안 사업 예산 (1년차)</span></div>
+        <div><b class="num">$286,350</b><span>모의 사업안 예산 설계 (한-아세안, 1년차)</span></div>
         <div><b class="num">3주</b><span>다국적 팀 사업안 완성</span></div>
-        <div><b class="num">9개</b><span>항목별 사전원가 산출</span></div>
+        <div><b class="num">3개 영역</b><span>교육·운영·홍보 사전원가 산출</span></div>
         <div><b>1위</b><span>청중평가</span></div>
       </div>
       <div class="cover-cta">
@@ -301,7 +326,9 @@ section.alt{background:var(--bg-2)}
         <button type="button" class="btn btn-ghost copy-mail" data-track="mail_cover">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>메일 보내기
         </button>
+        <a class="btn btn-ghost resume-pdf" href="resume.pdf" target="_blank" rel="noopener" data-track="pdf_cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5"/><path d="M4 19h16"/></svg>이력서 PDF</a>
       </div>
+      <p class="mail-text">E-mail · <span class="mail-addr"></span></p>
     </div>
   </div>
   <div class="wrap cover-foot">
@@ -333,14 +360,14 @@ section.alt{background:var(--bg-2)}
     <div class="stats rv">
       <div class="stat"><b class="num">4.21<small>/4.5</small></b><span>학점 (4.5 만점 환산)</span></div>
       <div class="stat"><b class="num">2<small>개</small></b><span>재경관리사 · 투자자산운용사</span></div>
-      <div class="stat"><b class="num">7→40<small>%</small></b><span>공연 마진률 개선</span></div>
+      <div class="stat"><b class="num">7→40<small>%</small></b><span>공연 마진율 개선</span></div>
       <div class="stat"><b class="num">1<small>위</small></b><span>YCAFE 사업안 청중평가</span></div>
     </div>
 
     <div class="flow rv">
       <a href="#p1" data-track="flow_p1"><div class="k">01 · PLAN</div><h3>예산을 세우고</h3><p>사전원가→목표원가로 사업 예산 편성</p></a>
       <a href="#p2" data-track="flow_p2"><div class="k">02 · CONTROL</div><h3>비용을 관리하고</h3><p>손익분기 공유로 제작비 14% 절감</p></a>
-      <a href="#p3" data-track="flow_p3"><div class="k">03 · ANALYZE</div><h3>데이터로 판단합니다</h3><p>반응 데이터 분석으로 최다 조회수</p></a>
+      <a href="#p3" data-track="flow_p3"><div class="k">03 · ANALYZE</div><h3>데이터로 판단합니다</h3><p>요인별 차이 분석으로 평균 대비 3배 조회수</p></a>
     </div>
   </div>
 </header>
@@ -360,32 +387,32 @@ section.alt{background:var(--bg-2)}
       <div class="card rv">
         <h3><i>EDUCATION</i>학력</h3>
         <ul class="rows">
-          <li><span class="d">2021.03 –</span><div><b>이화여자대학교</b><small>정치외교학 주전공 · 경영학 복수전공 수료<br>GPA <span class="hl num">4.21</span> / 4.5 (환산)</small></div></li>
-          <li><span class="d">교환학생</span><div><b>이탈리아 교환학기</b><small>유럽 시장과 소비자를 현지에서 경험하며 글로벌 비즈니스 환경 이해</small></div></li>
+          <li><span class="d">2021.03–2027.02<br>(졸업예정)</span><div><b>이화여자대학교</b><small>정치외교학 주전공 · 경영학 복수전공<br>GPA <span class="hl num">4.21</span> / 4.5 (환산)</small></div></li>
+          <li><span class="d">2023.09–2024.02</span><div><b>이탈리아 토리노 대학교 · 교환학생</b><small>유럽 시장과 소비자를 현지에서 경험하며 글로벌 비즈니스 환경 이해</small></div></li>
         </ul>
       </div>
 
       <div class="card rv">
         <h3><i>WORK</i>경력</h3>
         <ul class="rows">
-          <li><span class="d">6개월</span><div><b>메가커피 · 매니저</b><small>일일 현금·카드 매출 정산, 재고 확인 및 발주 관리</small></div></li>
-          <li><span class="d">8개월</span><div><b>영어학원 · 강사</b><small>학습 내용을 구조화해 수준별로 전달</small></div></li>
+          <li><span class="d">2023.03–08</span><div><b>메가커피 · 매니저</b><small>일일 현금·카드 매출 정산, 재고 확인 및 발주 관리</small></div></li>
+          <li><span class="d">2024.02–08</span><div><b>영어학원 · 중등부 강사</b><small>수업 진행, 개별 성취도 기록 관리 및 보호자 상담 보고서 작성</small></div></li>
         </ul>
       </div>
 
       <div class="card rv">
         <h3><i>LEARNING</i>학습</h3>
         <ul class="rows">
-          <li><span class="d">학회</span><div><b>국제정치 RT</b><small>국제정치 이슈 토론 및 발제</small></div></li>
-          <li><span class="d">학회</span><div><b>Ewha Newsweek Club</b><small>영자신문 분석 및 이슈 발표</small></div></li>
-          <li><span class="d">2026</span><div><b>정책 토론대회 <span class="hl">16강 진출</span></b><small>대미 디지털 협력·AI 경쟁력을 위한 AI 규제 완화 의제 (찬성 측)</small></div></li>
+          <li><span class="d">2022.05–12</span><div><b>국제정치 RT</b><small>국제정치 이슈 토론 및 발제</small></div></li>
+          <li><span class="d">2024.09–12</span><div><b>Ewha Newsweek Club</b><small>영자신문 분석 및 이슈 발표</small></div></li>
+          <li><span class="d">2026.09–10</span><div><b>정책 토론대회 <span class="hl">16강 진출</span></b><small>대미 디지털 협력·AI 경쟁력을 위한 AI 규제 완화 의제 (찬성 측)</small></div></li>
         </ul>
       </div>
 
       <div class="card rv">
         <h3><i>AWARDS</i>수상</h3>
         <ul class="rows">
-          <li><span class="d">2022.07</span><div><b>한아시아 청년포럼 국제학술지대회 우수상</b><small>백신 빈부격차 문제 분석·발표</small></div></li>
+          <li><span class="d">2022.08</span><div><b>한아시아 청년포럼 국제학술지대회 우수상</b><small>백신 빈부격차 문제 분석·발표</small></div></li>
           <li><span class="d">2024.11</span><div><b>YCAFE 한-아세안 사업안 청중평가 1위</b><small>외교부 YCAFE · GreenBridge 프로젝트</small></div></li>
         </ul>
       </div>
@@ -394,25 +421,25 @@ section.alt{background:var(--bg-2)}
         <h3><i>EXPERIENCE</i>경험</h3>
         <ul class="rows">
           <li><span class="d">2022.01</span><div><b>이화봉사단 국내교육봉사</b><small>춘천지역아동센터 초등학생 대상 경제교육 40시간 — 경제·금융 개념을 눈높이에 맞춰 구조화</small></div></li>
-          <li><span class="d">2022-2</span><div><b>사회과학대학 비상대책위원회</b><small>단과대 SNS 운영 및 <span class="hl">예산안·회계 결과 공개 보고</span></small></div></li>
+          <li><span class="d">2022.03–2023.06</span><div><b>이화투데이리포터</b><small>공식 블로그 조회 데이터를 유입 경로·주제·게시 시점별로 분석해 기획에 반영, <span class="hl">내 기사 총 조회수 전 학기 대비 1.5배</span>, 게시글 평균의 3배 조회수로 학기 최다 조회 게시글 기록</small></div></li>
+          <li><span class="d">2022.09–12</span><div><b>사회과학대학 비상대책위원회</b><small>단과대 SNS 운영 및 <span class="hl">예산안·회계 결과 공개 보고</span></small></div></li>
           <li><span class="d">2023.03–05</span><div><b>컬컴 서포터즈</b><small>영어회화 커뮤니티 홍보 이벤트 기획·운영, <span class="hl">세부 예산 직접 편성·집행</span></small></div></li>
-          <li><span class="d">2023</span><div><b>외교부 제2대 청년사절 · 팀장</b><small>안보리 비상임이사국 진출 홍보, 팀 <span class="hl">활동 경비·증빙 취합 및 정산 관리</span></small></div></li>
-          <li><span class="d">2024.10–11</span><div><b>외교부 YCAFE</b><small>아세안 학생들과 한-아세안 사업 기획, <span class="hl">사업 예산안 편성</span> 및 최종 발표</small></div></li>
-          <li><span class="d">2024 –</span><div><b>라임라이트 연극동아리 · 총무</b><small>공연 제작비·회비 관리, <span class="hl">손익분기 기반 예산 운영</span></small></div></li>
-          <li><span class="d">학내 언론</span><div><b>이화투데이리포터</b><small>기존 게시글의 댓글·조회 데이터를 분석해 콘텐츠 기획에 반영, <span class="hl">한 학기 최다 조회수 게시글</span> 기록</small></div></li>
+          <li><span class="d">2023.06–08</span><div><b>외교부 제2대 청년사절 · 팀장</b><small>안보리 비상임이사국 진출 홍보, 팀 <span class="hl">활동 경비·증빙 취합 및 정산 관리</span></small></div></li>
+          <li><span class="d">2024.10–11</span><div><b>외교부 YCAFE</b><small>아세안 학생들과 한-아세안 사업 기획, <span class="hl">모의 사업안 예산 설계</span> 및 최종 발표</small></div></li>
+          <li><span class="d">2024.09–12<br>2026.03–현재</span><div><b>라임라이트 연극동아리 · 총무</b><small>공연 제작비·회비 관리, <span class="hl">손익분기 기반 예산 운영</span></small></div></li>
         </ul>
-        <p class="etc">그 외 · 조선일보 ALC 서포터즈 · KrIGF 참가</p>
+        <p class="etc">그 외 · 조선일보 ALC 서포터즈 (2023.05–06) · KrIGF 서포터즈 (2023.06–07)</p>
       </div>
 
       <div class="card wide rv">
         <h3><i>CERTIFICATES</i>자격 · 어학</h3>
-        <div class="chips">
-          <span class="chip main">재경관리사 <small>회계·세무·원가</small></span>
-          <span class="chip main">투자자산운용사 <small>투자·금융시장</small></span>
-          <span class="chip">컴퓨터활용능력 2급</span>
-          <span class="chip">TOEIC <span class="num">910</span></span>
-          <span class="chip">OPIc IH</span>
-        </div>
+        <ul class="certs">
+          <li class="main"><b>재경관리사</b><span class="iss">삼일회계법인</span><span class="dt num">2025.12</span><span class="no num">No. 0-121-00252</span></li>
+          <li class="main"><b>투자자산운용사</b><span class="iss">한국금융투자협회</span><span class="dt num">2025.10</span><span class="no num">No. 25-018970</span></li>
+          <li class=""><b>컴퓨터활용능력 2급</b><span class="iss">대한상공회의소</span><span class="dt num">2026.10</span><span class="no num">No. 26-K9-075956</span></li>
+          <li class=""><b>TOEIC 910</b><span class="iss">YBM</span><span class="dt num">2025.10</span><span class="no num">No. 139792</span></li>
+          <li class=""><b>OPIc IH</b><span class="iss">OPIc</span><span class="dt num">2026.03</span><span class="no num">No. 2A3971603698</span></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -442,9 +469,9 @@ section.alt{background:var(--bg-2)}
     </div>
 
     <div class="panel rv">
-      <div class="panel-head"><h4>사업 예산안 (1년차)</h4><span>단위: USD</span></div>
+      <div class="panel-head"><h4>모의 사업안 예산 설계 (1년차)</h4><span>실제 집행이 아닌 제안용 설계안 · 단위: USD</span></div>
       <div class="kpis">
-        <div class="kpi main"><span>총 예산</span><b class="num">$286,350</b></div>
+        <div class="kpi main"><span>총 설계 예산</span><b class="num">$286,350</b></div>
         <div class="kpi"><span>직접비 소계</span><b class="num">$249,000</b></div>
         <div class="kpi"><span>운영·관리비 (직접비의 15%)</span><b class="num">$37,350</b></div>
       </div>
@@ -480,7 +507,7 @@ section.alt{background:var(--bg-2)}
     <div class="proj-top">
       <div class="rv">
         <span class="tag">PROJECT 02 <em>· CONTROL</em></span>
-        <h2>공연 마진률<br><em class="num">7% → 40%</em></h2>
+        <h2>공연 마진율<br><em class="num">7% → 40%</em></h2>
         <p class="one">고정비와 변동비를 나누자, 줄일 곳과 지킬 곳이 보였습니다.</p>
       </div>
       <dl class="meta rv">
@@ -492,13 +519,20 @@ section.alt{background:var(--bg-2)}
     </div>
 
     <div class="steps">
-      <div class="step rv"><div class="k">PROBLEM</div><h4>팔아도 남지 않는 구조</h4><p>제작비 약 250만 원, 관객은 약 180명. 마진률이 7% 수준에 그쳐, 공연이 끝나도 다음 공연을 위한 여유 자금이 거의 남지 않았습니다.</p></div>
-      <div class="step key rv"><div class="k">APPROACH</div><h4>숫자로 공유하고 조율</h4><ul><li>지출을 엑셀로 정리해 <b>고정비/변동비 분리</b></li><li>손익분기점 <b class="num">약 167석</b>을 팀 전체에 공유</li><li>파트장과 항목별 우선순위 조율</li></ul></div>
+      <div class="step rv"><div class="k">PROBLEM</div><h4>팔아도 남지 않는 구조</h4><p>제작비 약 250만 원, 관객은 약 180명. 마진율이 7% 수준에 그쳐, 공연이 끝나도 다음 공연을 위한 여유 자금이 거의 남지 않았습니다.</p></div>
+      <div class="step key rv"><div class="k">APPROACH</div><h4>숫자로 공유하고 조율</h4><ul><li>지출을 엑셀로 정리해 <b>고정비/변동비 분리</b> → 제작비 대부분이 <b>관객 수와 무관한 고정비</b>임을 확인</li><li>손익분기점 <b class="num">약 167석</b>을 팀 전체에 공유</li><li>파트장과 항목별 우선순위 조율</li></ul></div>
       <div class="step rv"><div class="k">ACTION</div><h4>비용은 줄이고 관객은 늘리고</h4><ul><li>소품·의상 재사용으로 제작비 절감</li><li>사전 예매 도입으로 관객 수 사전 확보</li><li>회차별 예약률을 확인해 <b>저조한 회차를 집중 홍보</b>, 관객 <b class="num">240명</b>으로 확대</li><li>팀원별 회비·필요 경비 직접 취합</li></ul></div>
     </div>
 
     <div class="panel rv">
-      <div class="panel-head"><h4>Before / After</h4><span>목표 마진률 30% 도전</span></div>
+      <div class="insight">
+        <div class="ins-text"><span class="k">INSIGHT</span><p>1인당 변동비가 사실상 0원이라, <b>관객 1명이 늘 때마다 티켓값이 거의 그대로 이익</b>이 되는 구조였습니다.<br>그래서 <b>고정비는 줄이고</b>(소품·의상 재사용) <b>관객은 늘리는</b>(예약률 저조 회차 집중 홍보) 두 방향으로 접근했습니다.</p></div>
+        <div class="formula">
+          <div><span>개선 전 손익분기점</span><b class="num">250만 원 ÷ (15,000원 − 변동비 ≈ 0원) <span style="white-space:nowrap">≈ 167석</span></b></div>
+          <div class="after"><span>개선 후 손익분기점</span><b class="num">215만 원 ÷ (15,000원 − 변동비 ≈ 0원) <span style="white-space:nowrap">≈ 143석</span></b></div>
+        </div>
+      </div>
+      <div class="panel-head"><h4>Before / After</h4><span>목표 마진율 30% 도전</span></div>
       <div class="two">
         <ul class="ba">
           <li><div class="lab"><b>제작비</b><span class="delta">−14%</span></div>
@@ -507,16 +541,17 @@ section.alt{background:var(--bg-2)}
           <li><div class="lab"><b>관객 수</b><span class="delta">+33%</span></div>
             <div class="row"><span>Before</span><div class="t"><div class="f" data-w="75"></div></div><span class="num">180명</span></div>
             <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">240명</span></div></li>
-          <li><div class="lab"><b>마진률</b><span class="delta">+33%p</span></div>
+          <li><div class="lab"><b>마진율</b><span class="delta">+33%p</span></div>
             <div class="row"><span>Before</span><div class="t"><div class="f" data-w="18"></div></div><span class="num">7%</span></div>
             <div class="row after"><span>After</span><div class="t"><div class="f" data-w="100"></div></div><span class="num">40%</span></div></li>
         </ul>
         <div>
           <div class="panel-head" style="margin-bottom:12px"><h4 style="font-size:14px">손익분기와 관객 (총 240석)</h4></div>
-          <div class="bep"><div class="seats" id="seats" role="img" aria-label="총 240석 중 손익분기 167석, 최종 관객 240명"></div></div>
+          <div class="bep"><div class="seats" id="seats" role="img" aria-label="총 240석. 개선 후 손익분기 143석, 개선 전 손익분기 167석, 최종 관객 240명"></div></div>
           <div class="bep-note">
-            <span><i style="background:var(--blue-line)"></i>손익분기 167석</span>
-            <span><i style="background:var(--blue)"></i>손익분기 초과 이익 구간 (168~240석)</span>
+            <span><i style="background:var(--blue-line)"></i>개선 후 손익분기 143석</span>
+            <span><i style="background:#7d9ae6"></i>비용 절감으로 이익 전환된 24석 (144~167)</span>
+            <span><i style="background:var(--blue)"></i>이익 구간 (168~240석)</span>
           </div>
         </div>
       </div>
@@ -524,7 +559,7 @@ section.alt{background:var(--bg-2)}
 
     <div class="result rv">
       <div class="big">동아리 기준으로</div>
-      <p>목표였던 마진률 30%를 넘어 <b>약 40%</b>를 달성했고,<br>이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
+      <p>목표였던 마진율 30%를 넘어 <b>약 40%</b>를 달성했고,<br>이때 만든 예산 관리 방식은 이후 <b>동아리의 운영 기준</b>이 되었습니다.</p>
     </div>
 
     <div class="bridge rv">관리의 다음 단계는, 결과가 나오기 전에 데이터로 판단하는 것입니다. <a href="#p3">프로젝트 3 · 데이터 분석 →</a></div>
@@ -537,32 +572,37 @@ section.alt{background:var(--bg-2)}
     <div class="proj-top">
       <div class="rv">
         <span class="tag">PROJECT 03 <em>· ANALYZE</em></span>
-        <h2>감이 아닌 근거로,<br>한 학기 <em>최다 조회수</em></h2>
-        <p class="one">콘텐츠 반응을 데이터로 분석해 다음 기획의 기준을 만들었습니다.</p>
+        <h2>목표와 실적의 차이를<br>요인별로 나눠 <em>평균 대비 3배</em></h2>
+        <p class="one">평균에도 못 미치던 조회수를 요인별로 분해해 원인을 특정했고, 내 기사 총 조회수는 전 학기의 1.5배, 최다 조회 게시글은 게시글 평균의 3배를 기록했습니다.</p>
       </div>
       <dl class="meta rv">
-        <div><dt>소속</dt><dd>이화투데이리포터</dd></div>
+        <div><dt>소속</dt><dd>이화투데이리포터 (이화여대 공식 블로그)</dd></div>
+        <div><dt>기간</dt><dd class="num">2022.03 – 2023.06</dd></div>
+        <div><dt>데이터</dt><dd>게시글별 조회수 · 유입 경로 · 게시 시점</dd></div>
         <div><dt>도구</dt><dd>AI 분석 · Excel</dd></div>
-        <div><dt>데이터</dt><dd>기존 게시글 댓글·조회수</dd></div>
-        <div><dt>역할</dt><dd>기획 · 분석 · 콘텐츠 제작</dd></div>
       </dl>
     </div>
 
     <div class="pipe rv">
-      <div><div class="k">STEP 1</div><h5>데이터 수집</h5><p>기존 게시글의 조회수와 댓글 반응을 모음</p></div>
-      <div><div class="k">STEP 2</div><h5>패턴 분석</h5><p>AI로 주제·형식별 반응 패턴 도출</p></div>
-      <div><div class="k">STEP 3</div><h5>재구조화·비교</h5><p>Excel로 기준을 맞춰 정리하고 비교</p></div>
-      <div><div class="k">INSIGHT</div><h5>전문직 시험 합격자 인터뷰</h5><p>가장 높은 반응 → 다음 콘텐츠에 반영</p></div>
+      <div><div class="k">STEP 1 · GAP</div><h5>차이 확인</h5><p>노력에도 기사 조회수가 평균에 못 미침 → 목표(학기 최다)와 실적의 차이 확인</p></div>
+      <div><div class="k">STEP 2 · BREAKDOWN</div><h5>요인별 분해</h5><p>조회 데이터를 <b>유입 경로 · 주제 · 게시 시점</b> 3개 요인으로 나눠 AI·Excel로 비교</p></div>
+      <div><div class="k">STEP 3 · ROOT CAUSE</div><h5>원인 특정</h5><p>차이의 가장 큰 원인은 콘텐츠의 질이 아닌 <b>검색 유입 부족</b></p></div>
+      <div><div class="k">ACTION</div><h5>효과 큰 요인에 집중</h5><p>검색 키워드로 주제 선정, 유입이 활발한 시간대에 게시, 게시물마다 요인별 성과 재점검</p></div>
+    </div>
+
+    <div class="kpis p3-kpis rv">
+      <div class="kpi main"><span>내 기사 총 조회수 (전 학기 대비)</span><b class="num">1.5배</b></div>
+      <div class="kpi"><span>결과</span><b>학기 최다 조회</b></div>
     </div>
 
     <div class="vs">
-      <div class="rv"><div class="k">BEFORE</div><p>어떤 콘텐츠가 반응을 얻을지 <b>감에 의존</b>해 기획</p></div>
-      <div class="after rv"><div class="k">AFTER</div><p>반응 데이터로 원인을 찾고 <b>근거 있는 기획</b>으로 연결</p></div>
+      <div class="rv"><div class="k">BEFORE</div><p>콘텐츠의 <b>질</b>에만 집중 → 조회수 평균 미달</p></div>
+      <div class="after rv"><div class="k">AFTER</div><p>차이를 요인별로 나눠 <b>검색 유입</b>이라는 원인을 찾고 집중</p></div>
     </div>
 
     <div class="result rv">
-      <div class="big">학기 최다 조회</div>
-      <p>분석 결과를 반영한 게시글이 한 학기 최다 조회수를 기록했습니다.<br>재무에서도 <b>숫자로 원인을 찾고, 개선으로 연결하는 방식</b>은 같다고 생각합니다.</p>
+      <div class="big">평균 대비 3배</div>
+      <p>목표와 실적의 차이를 요인별로 나눠 원인을 특정하는 방식은<br>재무의 <b>차이 분석(Variance Analysis)</b>과 같다고 생각합니다.</p>
     </div>
 
     <div class="bridge rv">이 세 가지 방식은 작은 프로젝트에서도 반복되었습니다. <a href="#mini">소규모 프로젝트 →</a></div>
@@ -611,9 +651,10 @@ section.alt{background:var(--bg-2)}
         <button type="button" class="btn btn-primary copy-mail" data-track="mail_closing">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>메일 보내기
         </button>
-        <span id="contactBtns"></span>
+        <a class="btn btn-ghost resume-pdf" href="resume.pdf" target="_blank" rel="noopener" data-track="pdf_closing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5"/><path d="M4 19h16"/></svg>이력서 PDF</a>
       </span>
     </div>
+    <p class="mail-text closing-mail">E-mail · <span class="mail-addr"></span></p>
   </div>
 </footer>
 
@@ -622,7 +663,7 @@ section.alt{background:var(--bg-2)}
 const CONFIG = {
   TRACK_URL: '',          // Apps Script 웹앱 URL (README 참고). 비워두면 추적 꺼짐
   EMAIL: 'thwjd0345@naver.com',   // '메일 보내기' 버튼이 복사하는 주소
-  PDF: ''                 // 포트폴리오 PDF 경로 예: 'portfolio.pdf'
+  PDF: 'resume.pdf'      // 저장소에 올린 이력서 PDF 파일명 (비우면 버튼 숨김)
 };
 
 /* ===== 프로젝트1 예산 막대 ===== */
@@ -633,17 +674,14 @@ document.getElementById('gbBars').innerHTML = GB.map((r,i)=>
 
 /* ===== 프로젝트2 좌석 (30석 × 8회 = 240석, 1칸 = 1석) ===== */
 (function(){
-  const total=240, bep=167, aud=240;
-  let h=''; for(let i=0;i<total;i++) h+=`<i class="${i<bep?'s':i<aud?'p':''}"></i>`;
+  const total=240, bep=143, bepOld=167, aud=240;
+  let h=''; for(let i=0;i<total;i++) h+=`<i class="${i<bep?'s':i<bepOld?'m':i<aud?'p':''}"></i>`;
   document.getElementById('seats').innerHTML=h;
 })();
 
 /* ===== 연락처 ===== */
-(function(){
-  const box=document.getElementById('contactBtns'); let h='';
-  if(CONFIG.PDF) h+=`<a href="${CONFIG.PDF}" target="_blank" data-track="pdf">PDF 포트폴리오</a>`;
-  box.innerHTML=h;
-})();
+document.querySelectorAll('.mail-addr').forEach(e=>e.textContent=CONFIG.EMAIL);
+document.querySelectorAll('.resume-pdf').forEach(a=>{ if(CONFIG.PDF) a.href=CONFIG.PDF; else a.remove(); });
 
 /* ===== 메일 복사 + 알림 ===== */
 const toast=document.createElement('div');
@@ -668,6 +706,7 @@ document.querySelectorAll('.copy-mail').forEach(b=>b.addEventListener('click',as
   if(ok) showToast('메일이 복사되었습니다', CONFIG.EMAIL);
   else showToast('메일 주소', CONFIG.EMAIL);
 }));
+
 
 /* ===== 필터 ===== */
 document.getElementById('filters').addEventListener('click',e=>{
